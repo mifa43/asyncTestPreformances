@@ -1,0 +1,26 @@
+version: '3'
+
+volumes:
+  fastapi_preformance:
+    driver: local
+
+services:
+  fastapi_preformance:
+    container_name: fastapi_preformance
+    build:
+      context: ./
+      # args: 
+      #   TEST: Test
+    image: python
+ 
+
+    ports:
+      - 8080:8080
+    networks:
+      
+      - fastapi_pref
+
+networks:
+  fastapi_pref:
+    external:
+      name: fastapi_pref
